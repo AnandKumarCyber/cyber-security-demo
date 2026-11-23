@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram Security Demo</title>
+<style>
+body {
+  margin: 0;
+  background: #fafafa;
+  font-family: Arial;
+  color: #262626;
+}
+header {
+  background: white;
+  padding: 17px;
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+.notice {
+  background: #fff3cd;
+  padding: 12px;
+  text-align: center;
+  color: #664d03;
+  font-size: 13px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+}
+.avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: linear-gradient(45deg,#feda75,#d62976,#4f5bd5);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 30px;
+}
+button {
+  background: #0095f6;
+  color: white;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 7px;
+}
+.post {
+  background: white;
+  margin-top: 15px;
+}
+.post img {
+  width: 100%;
+  display: block;
+}
+.info {
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+<header>Instagram</header>
+
+<div class="notice">
+SECURITY TRAINING DEMO — NOT REAL INSTAGRAM
+</div>
+
+<div class="profile">
+  <div class="avatar">S</div>
+  <div>
+    <b>sample_profile</b>
+    <p>Cyber Security Learner</p>
+    <button onclick="alert('यह केवल डेमो Follow बटन है!')">
+    Follow
+    </button>
+  </div>
+</div>
+
+<div class="post">
+  <div class="info">
+    <b>sample_profile</b>
+    <p>Learn to identify suspicious links!</p>
+  </div>
+  <div style="background:#dbeafe;padding:65px 15px;text-align:center;font-size:24px">
+    🔐 Stay Safe Online
+  </div>
+  <div class="info">
+    ❤️  Security Awareness
+    <p>Never share your OTP or password.</p>
+  </div>
+</div>
+</body>
+</html>
