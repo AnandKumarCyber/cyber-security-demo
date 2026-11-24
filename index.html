@@ -90,6 +90,63 @@ SECURITY TRAINING DEMO — NOT REAL INSTAGRAM
     ❤️  Security Awareness
     <p>Never share your OTP or password.</p>
   </div>
+</div> <div class="info" style="margin-top:20px">
+  <h2>🔐 Phishing Link Checker</h2>
+  <p>Enter a URL to check warning signs:</p>
+
+  <input
+    type="url"
+    id="urlInput"
+    placeholder="https://example.com"
+    style="width:90%;padding:12px"
+  >
+
+  <button onclick="checkLink()">Check Link</button>
+
+  <p id="result"></p>
 </div>
+
+<script>
+function checkLink() {
+  const input = document.getElementById("urlInput").value.trim();
+  const result = document.getElementById("result");
+
+  if (!input) {
+    result.innerText = "Please enter a URL.";
+    return;
+  }
+
+  try {
+    const url = new URL(input);
+    let warnings = [];
+
+    if (url.protocol !== "https:") {
+      warnings.push("HTTPS is not being used.");
+    }
+
+    if (url.username || url.password || url.href.includes("@")) {
+      warnings.push("URL contains an unusual @ sign or credentials.");
+    }
+
+    if (/^\d{1,3}(\.\d{1,3}){3}$/.test(url.hostname)) {
+      warnings.push("Website uses an IP address.");
+    }
+
+    if (url.hostname.includes("xn--")) {
+      warnings.push("Domain contains encoded characters.");
+    }
+
+    if (warnings.length > 0) {
+      result.innerText = "⚠️ Warning signs:\n" + warnings.join("\n");
+    } else {
+      result.innerText =
+        "No basic warning signs found. This does NOT mean the link is safe.";
+    }
+
+  } catch (error) {
+    result.innerText = "Invalid URL. Please enter a complete URL.";
+  }
+}
+</script>
 </body>
 </html>
